@@ -29,5 +29,5 @@ document.addEventListener('DOMContentLoaded', () => {
         if (rootElement.scrollTop > 20) {
             scrollToTopBtn.style.display = "block";
         } else {
-            scrollToTopBtn.style.display = "none";
-        }
+            scrollToTopBtn.style.display = "none";}
+        }}
