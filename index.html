@@ -56,3 +56,43 @@
             <p>An interactive activity to raise awareness among Customer Service agents about hold times.</p>
           </div>
         </a>
+      </div>
+
+      <div class="project-card">
+        <a href="https://imoegua.github.io/Paycheck/" target="_blank">
+          <img src="tax_thumbnail.png" alt="Producing a Paycheck (Rise Course)">
+          <div class="project-info">
+            <h3>Producing a Paycheck (Rise Course)</h3>
+            <p>A course explaining updated tax calculations for employee paychecks.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <button id="scrollToTopBtn" title="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+  <script>
+    // Fade-in animation
+    const faders = document.querySelectorAll(".fade-in");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    faders.forEach(fader => observer.observe(fader));
+
+    // Scroll to top button
+    const scrollBtn = document.getElementById("scrollToTopBtn");
+    window.onscroll = () => {
+      scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
+    };
+    scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  </script>
+<script src="script.js"></script>
+</body>
+</html>
