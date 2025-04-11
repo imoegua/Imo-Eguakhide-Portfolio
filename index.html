@@ -2,56 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Personal portfolio of [Your Name], showcasing projects and skills." />
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="scripts.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <title>Imo Eguakhide</title>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header role="banner">
-    <div class="container">
-      <h1>My Portfolio</h1>
-      <nav role="navigation" aria-label="Main navigation">
-        <button id="menu-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
-        <ul id="nav-list" class="nav-list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+  <header class="site-header">
+    <div class="header-content">
+      <h1>Imo Eguakhide</h1>
+      <p>Instructional Design | Media | Communications</p>
     </div>
   </header>
 
-  <main id="main" role="main">
-    <section id="home" tabindex="-1">
-      <h2>Welcome</h2>
-      <p>This is a brief introduction.</p>
+  <main class="container">
+    <section class="about fade-in">
+      <h2>About</h2>
+      <p>
+        Hello! I use my media experience, problem-solving skills, and knowledge of adult learning theory to create engaging and effective learning experiences.
+        <br>Explore some of my work below and let me know what you think!
+      </p>
     </section>
 
-    <section id="about" tabindex="-1">
-      <h2>About Me</h2>
-      <p>[Your background, skills, etc.]</p>
-    </section>
+    <section class="projects fade-in">
+      <h2>Projects</h2>
 
-    <section id="portfolio" tabindex="-1">
-      <h2>Portfolio</h2>
-      <p>[Showcase your work here]</p>
-    </section>
+      <div class="project-card">
+        <a href="https://imoegua.github.io/Xfinity-Mobile/" target="_blank">
+          <img src="xfinitythumbnail.png" alt="X-finity Mobile (Rise Course)">
+          <div class="project-info">
+            <h3>X-finity Mobile (Rise Course)</h3>
+            <p>A short course to educate call center employees on how to sell a service to prospective clients.</p>
+          </div>
+        </a>
+      </div>
 
-    <section id="contact" tabindex="-1">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
-    </section>
-  </main>
+      <div class="project-card">
+        <a href="https://imoegua.github.io/Client-Centricity/" target="_blank">
+          <img src="clientcentricthumbnail.png" alt="Client-Centric Mindset (Storyline Module)">
+          <div class="project-info">
+            <h3>Client-Centric Mindset (Storyline Module)</h3>
+            <p>This module was developed to encourage employees to treat external clients and internal teams with professionalism.</p>
+          </div>
+        </a>
+      </div>
 
-  <footer role="contentinfo">
-    <div class="container">
-      <p>&copy; 2024 My Portfolio</p>
-    </div>
-  </footer>
-</body>
-</html>
+      <div class="project-card">
+        <a href="https://imoegua.github.io/Keepingtime/" target="_blank">
+          <img src="gamethumnail.png" alt="Keeping Time (Game-based Activity)">
+          <div class="project-info">
+            <h3>Keeping Time (Game-based Activity)</h3>
+            <p>An interactive activity to raise awareness among Customer Service agents about hold times.</p>
+          </div>
+        </a>

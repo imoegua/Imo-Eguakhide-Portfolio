@@ -1,21 +1,40 @@
-// Mobile menu toggle
-const menuToggle = document.getElementById('menu-toggle');
-const navList = document.getElementById('nav-list');
+// Fade in elements on scroll
+document.addEventListener("DOMContentLoaded", () => {
+  const faders = document.querySelectorAll('.fade-in');
 
-menuToggle.addEventListener('click', () => {
-  const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-  menuToggle.setAttribute('aria-expanded', !isExpanded);
-  navList.classList.toggle('show');
+  const appearOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      entry.target.classList.add("show");
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
 });
 
-// Smooth scroll (for accessibility, we'll use native `scrollIntoView`)
-document.querySelectorAll('nav a').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const section = document.querySelector(link.getAttribute('href'));
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-      section.focus({ preventScroll: true });
-    }
+// Scroll to top button
+const scrollBtn = document.getElementById('scrollToTopBtn');
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 300) {
+    scrollBtn.style.display = 'block';
+  } else {
+    scrollBtn.style.display = 'none';
+  }
+});
+
+scrollBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
   });
 });
