@@ -1,23 +1,21 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const faders = document.querySelectorAll('.fade-in');
+// Mobile menu toggle
+const menuToggle = document.getElementById('menu-toggle');
+const navList = document.getElementById('nav-list');
 
-    const appearOptions = {
-        threshold: 0,
-        rootMargin: "0px 0px -100px 0px"
-    };
+menuToggle.addEventListener('click', () => {
+  const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+  menuToggle.setAttribute('aria-expanded', !isExpanded);
+  navList.classList.toggle('show');
+});
 
-    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            } else {
-                entry.target.classList.add('fade-in-visible');
-                appearOnScroll.unobserve(entry.target);
-            }
-        });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-        appearOnScroll.observe(fader);
-    });
+// Smooth scroll (for accessibility, we'll use native `scrollIntoView`)
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const section = document.querySelector(link.getAttribute('href'));
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      section.focus({ preventScroll: true });
+    }
+  });
 });
